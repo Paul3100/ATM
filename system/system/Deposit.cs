@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace system
 {
-    public partial class Form2 : Form
+    public partial class Deposit : Form
     {
-        public Form2()
+        public Deposit()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            Deposit form = new Deposit();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
             form.Show();
             this.Close();
         }

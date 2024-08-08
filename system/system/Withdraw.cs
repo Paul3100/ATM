@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace system
 {
-    public partial class Form2 : Form
+    public partial class Withdraw : Form
     {
-        public Form2()
+        public Withdraw()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Deposit form = new Deposit();
-            form.Show();
-            this.Close();
+
         }
     }
 }

@@ -99,6 +99,11 @@ namespace system
         {
 
         }
+
+        private void pin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 /*
