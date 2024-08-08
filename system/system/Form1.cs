@@ -17,7 +17,7 @@ namespace system
         SqlCommand command;
       
         String sql = "";
-
+        public static int user;
         public Form1()
         {
             InitializeComponent();
@@ -52,6 +52,7 @@ namespace system
         }
         private bool pin_check(int pin)
         {
+            user = pin;
             SqlDataReader dataReader;
             sql = "SELECT * FROM dbo.atmsys WHERE pin="+pin+";";
             command = new SqlCommand(sql, conn);

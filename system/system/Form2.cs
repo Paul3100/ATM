@@ -23,5 +23,12 @@ namespace system
             form.Show();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Withdraw form = new Withdraw();
+            form.Show();
+            this.Close();
+        }
     }
 }

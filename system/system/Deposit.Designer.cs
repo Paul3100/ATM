@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pin = new System.Windows.Forms.TextBox();
+            this.amount = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -52,16 +52,17 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Deposit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pin
+            // amount
             // 
-            this.pin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pin.Location = new System.Drawing.Point(235, 174);
-            this.pin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pin.Multiline = true;
-            this.pin.Name = "pin";
-            this.pin.Size = new System.Drawing.Size(331, 50);
-            this.pin.TabIndex = 3;
+            this.amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amount.Location = new System.Drawing.Point(235, 174);
+            this.amount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.amount.Multiline = true;
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(331, 50);
+            this.amount.TabIndex = 3;
             // 
             // button2
             // 
@@ -82,7 +83,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pin);
+            this.Controls.Add(this.amount);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Deposit";
@@ -96,7 +97,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox pin;
+        private System.Windows.Forms.TextBox amount;
         private System.Windows.Forms.Button button2;
     }
 }
