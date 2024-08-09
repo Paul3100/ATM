@@ -22,6 +22,24 @@ namespace system
         {
             InitializeComponent();
         }
+        private void withdraw(String amount)
+        {
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            // Specify Data source
+            string cs = @"Data Source=tcp:manipulate.database.windows.net,1433;Initial Catalog=atm;Persist Security Info=False;User ID=atm;Password=Awork1hard;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
+            conn = new SqlConnection(cs);
+            conn.Open();
+            // Update transactions list
+            String title = $"Withdrawal of £{amount}";
+            sql = $"UPDATE dbo.atmsys SET transactions = CONCAT(transactions, ',{title}'), dates = CONCAT(dates,',{DateTime.Now.ToString("MM/dd/yyyy")}') WHERE pin = {Form1.user};";
+
+            command = new SqlCommand(sql, conn);
+            adapter.InsertCommand = new SqlCommand(sql, conn);
+            adapter.InsertCommand.ExecuteNonQuery();
+
+            command.Dispose();
+        }
         private bool underflow(int amount)
         {   
             SqlDataReader dataReader;
@@ -46,6 +64,11 @@ namespace system
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Form2.limit())
+            {
+                MessageBox.Show("Daily Limit Reached");
+                return;
+            }
             if (!underflow(10))
             {
                 MessageBox.Show("Insufficient Funds");
@@ -65,6 +88,7 @@ namespace system
             command.Dispose();
             MessageBox.Show("Successful Withdrawal");
             Form2 form = new Form2();
+            withdraw("10");
             form.Show();
             this.Close();
         }
@@ -78,6 +102,11 @@ namespace system
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (Form2.limit())
+            {
+                MessageBox.Show("Daily Limit Reached");
+                return;
+            }
             if (!underflow(20))
             {
                 MessageBox.Show("Insufficient Funds");
@@ -95,6 +124,7 @@ namespace system
             adapter.InsertCommand = new SqlCommand(sql, conn);
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
+            withdraw("20");
             MessageBox.Show("Successful Withdrawal");
             Form2 form = new Form2();
             form.Show();
@@ -103,6 +133,11 @@ namespace system
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (Form2.limit())
+            {
+                MessageBox.Show("Daily Limit Reached");
+                return;
+            }
             if (!underflow(40))
             {
                 MessageBox.Show("Insufficient Funds");
@@ -120,6 +155,7 @@ namespace system
             adapter.InsertCommand = new SqlCommand(sql, conn);
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
+            withdraw("40");
             MessageBox.Show("Successful Withdrawal");
             Form2 form = new Form2();
             form.Show();
@@ -128,6 +164,11 @@ namespace system
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (Form2.limit())
+            {
+                MessageBox.Show("Daily Limit Reached");
+                return;
+            }
             if (!underflow(80))
             {
                 MessageBox.Show("Insufficient Funds");
@@ -146,6 +187,7 @@ namespace system
             adapter.InsertCommand = new SqlCommand(sql, conn);
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
+            withdraw("80");
             MessageBox.Show("Successful Withdrawal");
             Form2 form = new Form2();
             form.Show();

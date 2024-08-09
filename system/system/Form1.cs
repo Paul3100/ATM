@@ -40,7 +40,7 @@ namespace system
             // Initialise new pin numbers
             for (int i = 1000; i < 10000; i+=1000)
             {
-                sql = "Insert into atmsys (pin,cash,transactions) values ("+i+",500, '[]' )";
+                sql = "Insert into atmsys (pin,cash) values ("+i+ ",500)";
                 command = new SqlCommand(sql, conn);
                 adapter.InsertCommand = new SqlCommand(sql, conn);
                 adapter.InsertCommand.ExecuteNonQuery();
