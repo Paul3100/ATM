@@ -32,6 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.value = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.displaygrid = new System.Windows.Forms.DataGridView();
+            this.sdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strans = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.displaygrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,18 +77,45 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // displaygrid
+            // 
+            this.displaygrid.AllowUserToDeleteRows = false;
+            this.displaygrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.displaygrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.displaygrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sdate,
+            this.strans});
+            this.displaygrid.Location = new System.Drawing.Point(287, 86);
+            this.displaygrid.Name = "displaygrid";
+            this.displaygrid.Size = new System.Drawing.Size(301, 158);
+            this.displaygrid.TabIndex = 6;
+            // 
+            // sdate
+            // 
+            this.sdate.HeaderText = "Date";
+            this.sdate.Name = "sdate";
+            this.sdate.ReadOnly = true;
+            // 
+            // strans
+            // 
+            this.strans.HeaderText = "Transaction";
+            this.strans.Name = "strans";
+            this.strans.ReadOnly = true;
+            // 
             // Balance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.displaygrid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.value);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Balance";
             this.Text = "Balance";
+            ((System.ComponentModel.ISupportInitialize)(this.displaygrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +127,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label value;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView displaygrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strans;
     }
 }

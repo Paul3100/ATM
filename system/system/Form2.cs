@@ -53,7 +53,7 @@ namespace system
             {
                 if (dates[i] == today){
                     limit++;
-                    if(limit == 3)
+                    if(limit == 10)
                     {
                         // Limit reached
                         Console.WriteLine("Limit Reached");

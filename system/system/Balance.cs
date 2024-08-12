@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace system
 {
@@ -23,6 +24,19 @@ namespace system
             // Update balance label
             value.Text = balance();
             value.Refresh();
+            // Update last transactions
+            Form2.prevtransactions();
+            display();
+
+        }
+        private void display()
+        {     
+            int index = 1;
+            while (index != 11 && index < Form2.transactions.Length)
+            {
+                displaygrid.Rows.Add(Form2.dates[index], Form2.transactions[index]);
+                index++;
+            }
         }
         private String balance()
         {
@@ -50,5 +64,7 @@ namespace system
             form.Show();
             this.Close();
         }
+
+       
     }
 }
