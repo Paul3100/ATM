@@ -1,13 +1,9 @@
 # ATM
-This project is unfinished
 
+This project seeks to replicate a real world ATM system. Azure is used to configure a location for the database. Built in .NET using C# through a Windows Form application.
 
-Current Progress:
-Linked to Azure Database
-Withdraw
-Deposit
-Limited transactions
-Balance display
+## Features
 
-Todo:
-Display last 5 transactions in balance form page
+- Enables deposits and withdrawals
+- Enables balance checking
+- Integrates daily transaction limits
